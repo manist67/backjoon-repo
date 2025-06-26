@@ -45,6 +45,8 @@ def get_link(base_dir, sub_dir, dir):
 
 def scan_items(base_dir):
     solved_questions = []
+    if not os.path.isdir(base_dir): return []
+
     for root in os.scandir(base_dir):
         for item in os.scandir(root):
             solved_questions.append({
