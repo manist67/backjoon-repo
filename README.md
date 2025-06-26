@@ -5,7 +5,7 @@
 | 플랫폼 | 푼 문제 수 |
 |--------|------------|
 | 백준 | 1개 |
-| 프로그래머스 | 3개 |
+| 프로그래머스 | 4개 |
 
 ## 📄 문제 리스트
 | 플랫폼 | 이름 | 레벨 | 카테고리 | 링크 |
@@ -14,5 +14,6 @@
 | 프로그래머스 | 59036. 아픈 동물 찾기 | 1 | 코드를 입력하세요 | [문제 링크](https://www.kaggle.com/aaronschlegel/austin-animal-center-shelter-intakes-and-outcomes) |
 | 프로그래머스 | 59407. 이름이 있는 동물의 아이디 | 1 | 코드를 입력하세요 | [문제 링크](https://www.kaggle.com/aaronschlegel/austin-animal-center-shelter-intakes-and-outcomes) |
 | 프로그래머스 | 59039. 이름이 없는 동물의 아이디 | 1 | 조인 기초 | [문제 링크](https://www.kaggle.com/aaronschlegel/austin-animal-center-shelter-intakes-and-outcomes) |
+| 프로그래머스 | 59410. NULL 처리하기 | 2 | NULL 처리 | [문제 링크](https://www.kaggle.com/aaronschlegel/austin-animal-center-shelter-intakes-and-outcomes) |
 
 _이 README는 `generate_readme.py`에 의해 자동으로 생성됩니다._
