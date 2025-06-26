@@ -4,16 +4,17 @@
 ## ✅ 진행 현황
 | 플랫폼 | 푼 문제 수 |
 |--------|------------|
-| 백준 | 1개 |
+| 백준 | 2개 |
 | 프로그래머스 | 4개 |
 
 ## 📄 문제 리스트
 | 플랫폼 | 이름 | 레벨 | 카테고리 | 링크 |
 |--------|-----------------|------|---------|---------|
-| 백준 | 10869. 사칙연산 | Bronze | A+B, A-B, A*B, A/B(몫), A%B(나머지) | [문제 링크](None) |
-| 프로그래머스 | 59036. 아픈 동물 찾기 | 1 | 코드를 입력하세요 | [문제 링크](https://www.kaggle.com/aaronschlegel/austin-animal-center-shelter-intakes-and-outcomes) |
-| 프로그래머스 | 59407. 이름이 있는 동물의 아이디 | 1 | 코드를 입력하세요 | [문제 링크](https://www.kaggle.com/aaronschlegel/austin-animal-center-shelter-intakes-and-outcomes) |
-| 프로그래머스 | 59039. 이름이 없는 동물의 아이디 | 1 | 조인 기초 | [문제 링크](https://www.kaggle.com/aaronschlegel/austin-animal-center-shelter-intakes-and-outcomes) |
-| 프로그래머스 | 59410. NULL 처리하기 | 2 | NULL 처리 | [문제 링크](https://www.kaggle.com/aaronschlegel/austin-animal-center-shelter-intakes-and-outcomes) |
+| 백준 | 10869. 사칙연산 | Bronze | A+B, A-B, A*B, A/B(몫), A%B(나머지) | [문제 링크](./백준/Bronze/10869. 사칙연산) |
+| 백준 | 1001. A－B | Bronze | include <iostream> | [문제 링크](./백준/Bronze/1001. A－B) |
+| 프로그래머스 | 59036. 아픈 동물 찾기 | 1 | 코드를 입력하세요 | [문제 링크](./프로그래머스/1/59036. 아픈 동물 찾기) |
+| 프로그래머스 | 59039. 이름이 없는 동물의 아이디 | 1 | 조인 기초 | [문제 링크](./프로그래머스/1/59039. 이름이 없는 동물의 아이디) |
+| 프로그래머스 | 59407. 이름이 있는 동물의 아이디 | 1 | 코드를 입력하세요 | [문제 링크](./프로그래머스/1/59407. 이름이 있는 동물의 아이디) |
+| 프로그래머스 | 59410. NULL 처리하기 | 2 | NULL 처리 | [문제 링크](./프로그래머스/2/59410. NULL 처리하기) |
 
 _이 README는 `generate_readme.py`에 의해 자동으로 생성됩니다._
