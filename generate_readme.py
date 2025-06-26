@@ -39,19 +39,8 @@ def get_file_info(dir):
 
     return None
 
-import re
-def get_link(dir):
-    for file_dir in os.scandir(dir):
-        if "README.md" in file_dir.name:
-            with open(file_dir, "r+", encoding="utf8") as file:
-                lines = file.readlines()
-                pattern = r'https:\/\/[^\s)"]+'
-
-                for line in lines:
-                    matches = re.findall(pattern, line)
-                    if len(matches) > 1: return matches[0]
-
-    return None
+def get_link(base_dir, sub_dir, dir):
+    return os.path.join(base_dir, sub_dir.name, dir.name)
 
 
 def scan_items(base_dir):
@@ -62,7 +51,7 @@ def scan_items(base_dir):
                 "level": root.name,
                 "name": item.name,
                 "comments": get_file_info(item),
-                "link": get_link(item)
+                "link": get_link(base_dir, root, item)
             })
     return solved_questions
 
