@@ -1,25 +1,22 @@
 import os
 
 def generate_readme(solve_dicts):
-    lines = []
+    with open("./TEMPLATE.md", "r+", encoding="utf8") as template_files:
+        lines = "".join(template_files.readlines())
 
-    lines.append("# 📘 SQL 문제풀이 정리 레포지토리\n")
-    lines.append("이 저장소는 플랫폼별 SQL 문제풀이 기록을 자동 정리합니다.\n")
 
-    lines.append("\n## ✅ 진행 현황\n")
-    lines.append("| 플랫폼 | 푼 문제 수 |\n")
-    lines.append("|--------|------------|\n")
+    progress_list = []
     for name, items in solve_dicts.items():
-        lines.append(f"| {name} | {len(items)}개 |\n")
+        if len(item) < 0: continue
+        progress_list.append(f"| {name} | {len(items)}개 |\n")
+    lines = lines.replace("{{PROGRESS_LIST}}", "".join(progress_list))
 
-    lines.append("\n## 📄 문제 리스트\n")
-    lines.append("| 플랫폼 | 이름 | 레벨 | 카테고리 | 링크 |\n")
-    lines.append("|--------|-----------------|------|---------|---------|\n")
+    problem_list = []
     for name, items in solve_dicts.items():
         for item in items:
-            lines.append(f"| {name} | {item['name']} | {item['level']} | {item['comments']} | [문제 링크]({item['link']}) |\n")
+            problem_list.append(f"| {name} | {item['name']} | {item['level']} | {item['comments']} | [문제 링크]({item['link']}) |\n")
 
-    lines.append("\n_이 README는 `generate_readme.py`에 의해 자동으로 생성됩니다._\n")
+    lines = lines.replace("{{PROBLEM_LIST}}", "".join(problem_list))
 
     with open("README.md", "w", encoding="utf-8") as f:
         f.writelines(lines)
