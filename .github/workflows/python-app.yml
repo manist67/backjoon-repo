@@ -1,4 +1,4 @@
-name: Update README on AAA or BBB Change
+name: README.md 자동 업데이트
 
 on:
   push:
@@ -36,4 +36,3 @@ jobs:
             git commit -m '🔄 README 자동 업데이트'
             git push
           fi
-
