@@ -6,12 +6,16 @@ def generate_readme(solve_dicts):
 
 
     progress_list = []
+    progress_list.append("| 플랫폼 | 푼 문제 수 |\n")
+    progress_list.append("|--------|------------|\n")
     for name, items in solve_dicts.items():
-        if len(item) < 0: continue
+        if len(items) <= 0: continue
         progress_list.append(f"| {name} | {len(items)}개 |\n")
     lines = lines.replace("{{PROGRESS_LIST}}", "".join(progress_list))
 
     problem_list = []
+    problem_list.append("| 플랫폼 | 이름 | 레벨 | 카테고리 | 링크 |\n")
+    problem_list.append("|--------|-----------------|------|---------|---------|\n")
     for name, items in solve_dicts.items():
         for item in items:
             problem_list.append(f"| {name} | {item['name']} | {item['level']} | {item['comments']} | [문제 링크]({item['link']}) |\n")
