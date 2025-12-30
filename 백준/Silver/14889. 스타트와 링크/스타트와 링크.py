@@ -21,34 +21,18 @@ def combain(n, k):
   backtracking(0)
   return result
 
-def permutation(team, k=2):
-  result = []
-  path = []
-
-  def backtracking(s):
-    if len(path) == k:
-      result.append(path[:])
-      return
-    
-    for i in range(s, len(team)):
-      path.append(team[i])
-      backtracking(i+1)
-      path.pop()
-  
-  backtracking(0)
-  ans = result[:]
-  for r in result:
-    ans.append(r[::-1])
-  return ans
-
 teams = combain(N, N//2)
 ans = 1000000
 
-def get_score(ability_set, team):
-  perm = permutation(team)
+def get_score(S, team):
   score = 0
-  for p in perm:
-    score += sum(map(lambda x: ability_set[p[0]][p[1]] ,p))
+  team_len = len(team)
+  for i in range(team_len):
+    a = team[i]
+    for j in range(i+1, team_len):
+      b = team[j]
+      score += S[a][b] + S[b][a]
+    
   return score
 
 
@@ -59,4 +43,4 @@ for i in range(0, len(teams)//2):
   if min_val > diff:
     min_val = diff
 
-print(min_val//2)
+print(min_val)
