@@ -37,8 +37,8 @@ for key in idx_need_to_know.keys():
 
 # print(search_alphabets)
 
-keys = ans.keys()
-for idx, c in enumerate(list(S)):
+keys = set(ans.keys())
+for idx, c in enumerate(S):
   if c in search_alphabets:
     alphabet_count[c] += 1
   if idx in keys:
