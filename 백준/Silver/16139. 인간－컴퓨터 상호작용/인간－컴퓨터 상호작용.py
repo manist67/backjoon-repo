@@ -3,52 +3,28 @@ q = int(input())
 import sys
 
 questions = []
-search_alphabets = set()
 
-idx_need_to_know = {}
-alphabet_count = {}
+dp = [
+  [ 0 ] * (len(S) + 1) for i in range(26)
+]
+
+for idx, c in enumerate(S):
+  o = ord(c)-97
+  for j in range(26):
+    if o == j:
+      dp[j][idx + 1] = dp[j][idx] + 1
+    else: 
+      dp[j][idx + 1] = dp[j][idx]
+
 
 for _ in range(q):
-  alphabet, l, r = sys.stdin.readline().split()
-  l, r = int(l), int(r)
-  questions.append((alphabet, l, r))
-  
-  if alphabet not in search_alphabets: 
-    alphabet_count[alphabet] = 0
-    search_alphabets.add(alphabet)
+  a, l, r = sys.stdin.readline().split()
+  questions.append( [a, int(l), int(r)] )
 
-  if l not in idx_need_to_know:
-    idx_need_to_know[l] = set()
-    
-  if l-1 not in idx_need_to_know:
-    idx_need_to_know[l-1] = set()
-
-  idx_need_to_know[l].add(alphabet)
-  idx_need_to_know[l-1].add(alphabet)
-
-  if r not in idx_need_to_know:
-    idx_need_to_know[r] = set()
-  idx_need_to_know[r].add(alphabet)
-
-
-ans = {}
-for key in idx_need_to_know.keys():
-  ans[key] = { a: 0  for a in idx_need_to_know[key] }
-
-# print(search_alphabets)
-
-keys = ans.keys()
-for idx, c in enumerate(list(S)):
-  if c in search_alphabets:
-    alphabet_count[c] += 1
-  if idx in keys:
-    for k in ans[idx].keys():
-      ans[idx][k] = alphabet_count[k]
-
-results = []
+ans = []
 for question in questions:
-  alphabet, l, r = question
-  results.append(ans[r][alphabet] - ans[l-1][alphabet])
+  a, l, r = question
+  o = ord(a)-97
+  ans.append(str(dp[o][r + 1] - dp[o][l]))
 
-
-print("\n".join(map(str, results)))
+print("\n".join(ans))
