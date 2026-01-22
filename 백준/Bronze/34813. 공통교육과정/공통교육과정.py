@@ -1,0 +1,5 @@
+a = input()
+if a[0] == "F": print("Foundation")
+if a[0] == "C": print("Claves")
+if a[0] == "V": print("Veritas")
+if a[0] == "E": print("Exploration")
