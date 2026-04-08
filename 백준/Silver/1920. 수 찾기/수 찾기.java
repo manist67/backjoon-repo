@@ -33,7 +33,7 @@ public class Main {
     static int solution(ArrayList<Integer> origin, Integer target) {
         int l = 0, r = origin.size();
         while(l < r) {
-            int mid = l + (r - l) / 2;
+            int mid = (l+r) / 2;
             if(target <= origin.get(mid)) {
                 r = mid;
             } else {
@@ -45,7 +45,7 @@ public class Main {
         l = 0;
         r = origin.size();
         while(l < r) {
-            int mid = l + (r - l) / 2;
+            int mid = (l+r) / 2;
             if(target < origin.get(mid)) {
                 r = mid;
             } else {
