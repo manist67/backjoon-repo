@@ -14,17 +14,13 @@ public class Main {
 
         boolean[] set = new boolean[(int)(max-min + 1L)];
 
-        HashSet<Long> square = new HashSet<>();
 
         for(long i = 2 ; i <= (long) Math.sqrt(max); i++ ) {
-            square.add(i*i);
-        }
-
-        for(Long s : square) {
+            long s = i*i;
             long start = min / s;
             if(min % s != 0) start++;
-            for(long i = start; (long) (s * i) <= max; i++) {
-                int idx = (int)(s*i-min);
+            for(long j = start; (long) (s * j) <= max; j++) {
+                int idx = (int)(s*j-min);
                 set[idx] = true;
             }
         }
